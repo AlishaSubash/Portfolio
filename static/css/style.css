@@ -1,0 +1,328 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #101820 0%, #283e51 100%);
+    color: #e0e6ed;
+    min-height: 100vh;
+}
+
+nav {
+    background: #181f2a;
+    padding: 18px 0;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+nav a {
+    margin: 0 22px;
+    text-decoration: none;
+    color: #7fffd4;
+    font-weight: 600;
+    font-size: 1.15em;
+    letter-spacing: 0.5px;
+    transition: color 0.2s, border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+    position: relative;
+    overflow: hidden;
+}
+nav a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00ff99;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+nav a:hover::after, nav a.active::after {
+    width: 100%;
+}
+nav a:hover, nav a.active {
+    color: #00ff99;
+    border-bottom: 2px solid #00ff99;
+}
+
+h1 {
+    color: #00ff99;
+    text-shadow: 1px 2px 12px #101820;
+    margin-top: 48px;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-align: center;
+}
+
+p {
+    font-size: 1.18em;
+    color: #e0e6ed;
+    background: rgba(24, 31, 42, 0.85);
+    padding: 20px 28px;
+    border-radius: 10px;
+    max-width: 650px;
+    margin: 36px auto;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    line-height: 1.7;
+}
+
+button#theme-toggle {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    z-index: 1000;
+    background: #101820;
+    color: #7fffd4;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    transition: background 0.2s, color 0.2s;
+}
+button#theme-toggle:hover {
+    background: #00ff99;
+    color: #101820;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.4em;
+    }
+    nav a {
+        font-size: 1em;
+        margin: 0 8px;
+    }
+    p {
+        font-size: 1em;
+        padding: 12px;
+    }
+    button#theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 0.95em;
+    }
+}
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    max-width: 900px;
+    margin: 60px auto 0 auto;
+    padding: 32px 24px;
+    background: rgba(16, 24, 32, 0.85);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+}
+
+.home-left {
+    flex: 1;
+    min-width: 220px;
+}
+
+.home-title {
+    font-size: 2.4em;
+    font-weight: bold;
+    color: #00ff99;
+    margin-bottom: 12px;
+}
+
+.home-subheading {
+    font-size: 1.3em;
+    color: #7fffd4;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.home-right {
+    flex: 2;
+    min-width: 280px;
+}
+
+.intro-box {
+    background: #181f2a;
+    color: #e0e6ed;
+    padding: 28px 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    font-size: 1.12em;
+    line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+    .home-container {
+        flex-direction: column;
+        gap: 24px;
+        padding: 18px 8px;
+    }
+    .home-left, .home-right {
+        min-width: 0;
+    }
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    gap: 18px;
+}
+
+.linkedin-link {
+    color: #0077b5;
+    transition: color 0.2s;
+    margin-bottom: 10px;
+}
+.linkedin-link:hover {
+    color: #00ff99;
+}
+
+.gmail-link {
+    color: #ea4335;
+    transition: color 0.2s;
+    margin-bottom: 10px;
+    margin-left: 18px;
+}
+.gmail-link:hover {
+    color: #00ff99;
+}
+
+.contact-email {
+    font-size: 1.15em;
+    color: #e0e6ed;
+    background: rgba(24, 31, 42, 0.85);
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.about-section {
+    background: rgba(24, 31, 42, 0.85);
+    margin: 32px auto;
+    padding: 24px 28px;
+    border-radius: 12px;
+    max-width: 700px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 2px solid #7fffd4;
+}
+.about-section h2 {
+    color: #00ff99;
+    margin-bottom: 12px;
+}
+.resume-link {
+    color: #7fffd4;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.2s;
+}
+.resume-link:hover {
+    color: #00ff99;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+.project-card {
+    background: rgba(24, 31, 42, 0.85);
+    padding: 24px 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+    border: 2px solid transparent;
+}
+.project-card:hover {
+    transform: translateY(-8px) scale(1.025);
+    box-shadow: 0 8px 32px rgba(0,255,153,0.18);
+    border: 2px solid #00ff99;
+    cursor: pointer;
+}
+.project-card h2 {
+    color: #00ff99;
+    margin-bottom: 8px;
+}
+.project-card a {
+    color: #7fffd4;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.project-card a:hover {
+    color: #00ff99;
+}
+
+/* Responsive project cards: stack and fill width on small screens */
+@media (max-width: 700px) {
+    .projects-list {
+        gap: 18px;
+        padding: 0 2vw;
+    }
+    .project-card {
+        padding: 14px 6px;
+        font-size: 0.98em;
+    }
+}
+
+/* Responsive navigation: stack links vertically on very small screens */
+@media (max-width: 500px) {
+    nav {
+        padding: 10px 0;
+    }
+    nav a {
+        display: block;
+        margin: 8px 0;
+        font-size: 1em;
+    }
+}
+
+/* Add to style.css */
+.github-link {
+    color: #fff;
+    transition: color 0.2s;
+    margin-bottom: 10px;
+    margin-left: 18px;
+}
+.github-link:hover {
+    color: #00ff99;
+}
+
+/* Add to style.css */
+.site-footer {
+    margin-top: 60px;
+    padding: 24px 0 12px 0;
+    background: #181f2a;
+    text-align: center;
+    border-top: 1px solid #222b3a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.footer-icon {
+    margin: 0 12px;
+    font-size: 1.7em;
+    vertical-align: middle;
+    transition: color 0.2s;
+    color: #7fffd4;
+    text-decoration: none;
+}
+.footer-icon.linkedin-link:hover { color: #0077b5; }
+.footer-icon.github-link:hover { color: #fff; }
+.footer-icon.gmail-link:hover { color: #ea4335; }
+.footer-text {
+    display: block;
+    margin-top: 8px;
+    color: #7fffd4;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+}
